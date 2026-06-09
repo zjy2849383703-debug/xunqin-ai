@@ -1,0 +1,196 @@
+     1|<!DOCTYPE html>
+     2|<html lang="zh-CN">
+     3|<head>
+     4|  <meta charset="UTF-8" />
+     5|  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     6|  <title>寻亲 AI · 温暖回家</title>
+     7|  <link rel="stylesheet" href="css/styles.css" />
+     8|</head>
+     9|<body class="page-home">
+    10|
+    11|  <header class="home-header">
+    12|    <nav class="home-nav">
+    13|      <a href="index.html" class="home-logo">
+    14|        <img
+    15|          class="brand-logo brand-logo--nav"
+    16|          src="images/logo.png"
+    17|          alt="AI让爱回家"
+    18|          width="357"
+    19|          height="133"
+    20|        />
+    21|      </a>
+    22|      <ul class="home-nav-links nav-links">
+    23|        <li><a href="index.html">首页</a></li>
+    24|        <li><a href="restore.html">照片修复</a></li>
+    25|        <li><a href="grow.html">成长预测</a></li>
+    26|        <li><a href="clue.html">线索上报</a></li>
+    27|      </ul>
+    28|    </nav>
+    29|  </header>
+    30|
+    31|  <section class="home-hero" aria-label="首页横幅">
+    32|    <img
+    33|      class="home-hero__img"
+    34|      src="images/hero-banner.png"
+    35|      alt="寻亲 AI 公益平台横幅"
+    36|      width="800"
+    37|      height="450"
+    38|      decoding="async"
+    39|      fetchpriority="high"
+    40|    />
+    41|  </section>
+    42|
+    43|  <main class="home-main">
+    44|
+    45|    <section class="home-about" id="about">
+    46|      <div class="home-about__brand">
+    47|        <img
+    48|          class="brand-logo brand-logo--about"
+    49|          src="images/logo.png"
+    50|          alt="AI让爱回家"
+    51|          width="357"
+    52|          height="133"
+    53|        />
+    54|        <h2 class="home-about__heading">关于我们</h2>
+    55|      </div>
+    56|      <p class="home-about__intro">
+    57|        我们致力于将人工智能应用于公益寻亲场景：帮助家属修复珍贵老照片、推演成长后的可能样貌，
+    58|        并在平台上集中展示公开寻亲信息，方便社会各界浏览、转发与提供线索。
+    59|        每一份关注，都可能照亮一条回家的路。
+    60|      </p>
+    61|      <div class="home-features">
+    62|        <article class="home-feature-card">
+    63|          <div class="home-feature-card__icon" aria-hidden="true">
+    64|            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="10" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 34l8-10 6 7 6-9 8 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    65|          </div>
+    66|          <h3>AI 影像能力</h3>
+    67|          <p>支持老照片修复与跨年龄成长预测，让模糊记忆重新变得清晰可见。</p>
+    68|        </article>
+    69|        <article class="home-feature-card">
+    70|          <div class="home-feature-card__icon" aria-hidden="true">
+    71|            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="20" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 38c2-7 7-11 12-11s10 4 12 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    72|          </div>
+    73|          <h3>信息集中展示</h3>
+    74|          <p>寻亲海报与基础资料统一呈现，便于快速浏览与核对关键信息。</p>
+    75|        </article>
+    76|        <article class="home-feature-card">
+    77|          <div class="home-feature-card__icon" aria-hidden="true">
+    78|            <svg viewBox="0 0 48 48" fill="none"><path d="M14 24h20M24 14v20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="10" y="10" width="28" height="28" rx="4" stroke="currentColor" stroke-width="2"/></svg>
+    79|          </div>
+    80|          <h3>操作简单直观</h3>
+    81|          <p>上传图片即可体验相关功能，详情信息一点即看，降低使用门槛。</p>
+    82|        </article>
+    83|      </div>
+    84|    </section>
+    85|
+    86|    <section class="home-plaza" aria-label="寻亲广场">
+    87|      <h2 class="home-section-title"><span class="home-section-title__bar"></span>寻亲广场</h2>
+    88|      <div class="home-carousel">
+    89|        <button type="button" id="carousel-prev" class="home-carousel__btn home-carousel__btn--prev" aria-label="上一组">‹</button>
+    90|        <div class="home-carousel__viewport">
+    91|          <div id="carousel-track" class="home-carousel__track" role="list">
+    92|            <!-- 由 home.js 渲染 -->
+    93|          </div>
+    94|        </div>
+    95|        <button type="button" id="carousel-next" class="home-carousel__btn home-carousel__btn--next" aria-label="下一组">›</button>
+    96|      </div>
+    97|      <p id="carousel-empty" class="home-carousel__empty" hidden>暂无寻亲信息</p>
+    98|    </section>
+    99|
+   100|    <section class="home-news-row">
+   101|      <section class="home-news-col" aria-label="寻亲动态">
+   102|        <h2 class="home-section-title"><span class="home-section-title__bar"></span>寻亲动态</h2>
+   103|        <ul id="news-list" class="home-news-list">
+   104|          <li class="home-news-item">
+   105|            <span class="home-news-item__thumb" aria-hidden="true"></span>
+   106|            <div class="home-news-item__body">
+   107|              <h3>内容筹备中</h3>
+   108|              <p>寻亲动态栏目即将上线，届时将发布平台相关公告与寻亲进展信息。</p>
+   109|            </div>
+   110|          </li>
+   111|          <li class="home-news-item">
+   112|            <span class="home-news-item__thumb" aria-hidden="true"></span>
+   113|            <div class="home-news-item__body">
+   114|              <h3>敬请期待</h3>
+   115|              <p>您上传的文章与资讯将展示在此，帮助更多人了解最新情况。</p>
+   116|            </div>
+   117|          </li>
+   118|          <li class="home-news-item">
+   119|            <span class="home-news-item__thumb" aria-hidden="true"></span>
+   120|            <div class="home-news-item__body">
+   121|              <h3>持续关注</h3>
+   122|              <p>感谢您对公益寻亲事业的支持，也请留意官方渠道的权威信息。</p>
+   123|            </div>
+   124|          </li>
+   125|        </ul>
+   126|      </section>
+   127|
+   128|      <section class="home-news-col" aria-label="寻亲指南">
+   129|        <h2 class="home-section-title"><span class="home-section-title__bar"></span>寻亲指南</h2>
+   130|        <ul id="guide-list" class="home-news-list">
+   131|          <li class="home-news-item">
+   132|            <span class="home-news-item__thumb" aria-hidden="true"></span>
+   133|            <div class="home-news-item__body">
+   134|              <h3>内容筹备中</h3>
+   135|              <p>寻亲指南栏目即将上线，将整理报案、登记、扩散等实用指引。</p>
+   136|            </div>
+   137|          </li>
+   138|          <li class="home-news-item">
+   139|            <span class="home-news-item__thumb" aria-hidden="true"></span>
+   140|            <div class="home-news-item__body">
+   141|              <h3>敬请期待</h3>
+   142|              <p>您上传的指南文章将展示在此，为家属与志愿者提供参考。</p>
+   143|            </div>
+   144|          </li>
+   145|          <li class="home-news-item">
+   146|            <span class="home-news-item__thumb" aria-hidden="true"></span>
+   147|            <div class="home-news-item__body">
+   148|              <h3>安全提示</h3>
+   149|              <p>请通过正规渠道核实信息，谨防诈骗，保护个人隐私与人身安全。</p>
+   150|            </div>
+   151|          </li>
+   152|        </ul>
+   153|      </section>
+   154|    </section>
+   155|
+   156|  </main>
+   157|
+   158|  <footer class="home-footer">
+   159|    <div class="home-footer__inner">
+   160|      <img
+   161|        class="brand-logo brand-logo--footer"
+   162|        src="images/logo.png"
+   163|        alt="AI让爱回家"
+   164|        width="357"
+   165|        height="133"
+   166|      />
+   167|      <nav class="home-footer__links" aria-label="页脚导航">
+   168|        <a href="#about">关于我们</a>
+   169|        <a href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">宝贝回家</a>
+   170|        <a href="#about">使用说明</a>
+   171|        <a href="#about">版权声明</a>
+   172|      </nav>
+   173|    </div>
+   174|    <div class="home-footer__bar">
+   175|      <p>© 2026 寻亲 AI · 仅供公益寻亲使用</p>
+   176|      <p>官方合作：<a href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">宝贝回家寻子网</a></p>
+   177|    </div>
+   178|  </footer>
+   179|
+   180|  <div id="detail-modal" class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+   181|    <div class="detail-panel">
+   182|      <div class="detail-header">
+   183|        <h2 id="detail-title">寻亲信息</h2>
+   184|        <button type="button" id="detail-close" class="detail-close" aria-label="关闭">×</button>
+   185|      </div>
+   186|      <div id="detail-body" class="detail-body"></div>
+   187|      <div id="detail-footer" class="detail-footer"></div>
+   188|    </div>
+   189|  </div>
+   190|
+   191|  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+   192|  <script src="js/home.js"></script>
+   193|</body>
+   194|</html>
+   195|

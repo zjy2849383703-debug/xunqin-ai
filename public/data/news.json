@@ -1,0 +1,60 @@
+{
+  "news": [
+    {
+      "title": "十年寻亲路，曾庆良终与亲生父母团圆",
+      "summary": "1989年2月在江西湖口被拐，2026年1月经DNA比对确认身份，在宝贝回家志愿者与警方协作下，于1月10日与离散36年的父母重逢。",
+      "url": "https://baobeihuijia.com/bbhj/contents/13/265400.html",
+      "thumb": "images/news/cover-reunion.svg",
+      "thumbType": "reunion",
+      "source": "宝贝回家",
+      "date": "2026-01"
+    },
+    {
+      "title": "失散25年，张云鹏从加拿大回国认亲",
+      "summary": "2001年在沈阳走失后由福利院安置并被海外家庭收养，2025年通过宝贝回家志愿者寄回血样比对成功，2026年3月与吉林父亲在家乡团聚。",
+      "url": "http://www.chinanews.com.cn/sh/shipin/cns-d/2026/03-02/news1047628.shtml",
+      "thumb": "https://poss-videocloud.cns.com.cn/oss/2026/03/02/chinanews/MEIZI_YUNSHI/custom/8870810711ec46e28136dc05ddf2182e.jpg",
+      "thumbType": "homecoming",
+      "source": "中国新闻网",
+      "date": "2026-03"
+    },
+    {
+      "title": "薛苗苗被拐33年后DNA比中回家",
+      "summary": "1992年在浙江温州苍南失踪，家属多年寻子。2018年入库DNA后，2025年6月比对成功，于6月23日与亲人团圆。",
+      "url": "https://baobeihuijia.com/bbhj/contents/13/253628.html",
+      "thumb": "images/news/cover-dna.svg",
+      "thumbType": "dna",
+      "source": "宝贝回家",
+      "date": "2025-06"
+    }
+  ],
+  "guides": [
+    {
+      "title": "孩子失踪，不必等24小时再报警",
+      "summary": "国际失踪儿童日公益提醒：发现儿童失踪应立即拨打110报案，警方会启动快速查找机制，切勿被“满24小时才能立案”的误区耽误时间。",
+      "url": "http://chinapeace.gov.cn/chinapeace/c100007/2022-05/25/content_12630122.shtml",
+      "thumb": "images/news/cover-police.svg",
+      "thumbType": "police",
+      "source": "中国长安网",
+      "date": "2022-05"
+    },
+    {
+      "title": "公安部刑侦局发布《寻亲指南》",
+      "summary": "指导疑似被拐人员及寻亲家属向公安机关求助：及时报案、配合采血入库、关注“团圆”行动等官方渠道，依法开展身份核查与比对。",
+      "url": "https://s.cyol.com/articles/2021-07/14/content_Da2AqZfz.html",
+      "thumb": "images/news/cover-guide.svg",
+      "thumbType": "guide",
+      "source": "中国青年报",
+      "date": "2021-07"
+    },
+    {
+      "title": "宝贝回家：免费寻亲登记入口",
+      "summary": "平台提供家寻宝贝、宝贝寻家等多种登记类型，审核后信息将同步至协作网络。所有寻亲服务不收取任何费用，请通过官网正规渠道登记。",
+      "url": "https://reg.baobeihuijia.com/seek/findhome.html",
+      "thumb": "images/news/cover-register.svg",
+      "thumbType": "register",
+      "source": "宝贝回家",
+      "date": ""
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+     1|<!DOCTYPE html>
+     2|<html lang="zh-CN">
+     3|<head>
+     4|  <meta charset="UTF-8" />
+     5|  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     6|  <title>线索上报 · 寻亲 AI</title>
+     7|  <link rel="stylesheet" href="css/styles.css" />
+     8|</head>
+     9|<body>
+    10|
+    11|  <header class="site-header">
+    12|    <nav class="site-nav">
+    13|      <a href="index.html" class="site-logo">
+    14|        <img
+    15|          class="brand-logo brand-logo--nav"
+    16|          src="images/logo.png"
+    17|          alt="AI让爱回家"
+    18|          width="357"
+    19|          height="133"
+    20|        />
+    21|      </a>
+    22|      <ul class="nav-links">
+    23|        <li><a href="index.html">首页</a></li>
+    24|        <li><a href="restore.html">老照片修复</a></li>
+    25|        <li><a href="grow.html">成长预测</a></li>
+    26|        <li><a href="clue.html">线索上报</a></li>
+    27|      </ul>
+    28|    </nav>
+    29|  </header>
+    30|
+    31|  <main class="site-main">
+    32|    <section class="page-hero page-hero--compact">
+    33|      <h1>线索上报</h1>
+    34|      <p>您的每一次留意，都可能带来团圆</p>
+    35|    </section>
+    36|
+    37|    <section class="feature-panel feature-panel--clue">
+    38|      <form id="clue-form" class="clue-form upload-card" novalidate>
+    39|        <div class="form-field">
+    40|          <label for="clue-description">线索描述 <span class="required">*</span></label>
+    41|          <textarea
+    42|            id="clue-description"
+    43|            name="description"
+    44|            rows="5"
+    45|            required
+    46|            placeholder="请详细描述您发现的线索，包括外貌特征、行为举止等…"
+    47|          ></textarea>
+    48|        </div>
+    49|
+    50|        <div class="form-field">
+    51|          <label for="clue-location">发现地点 <span class="required">*</span></label>
+    52|          <input
+    53|            type="text"
+    54|            id="clue-location"
+    55|            name="location"
+    56|            required
+    57|            placeholder="请填写具体的发现地点"
+    58|            autocomplete="street-address"
+    59|          />
+    60|        </div>
+    61|
+    62|        <div class="form-field">
+    63|          <label for="clue-found-at">发现时间 <span class="required">*</span></label>
+    64|          <input
+    65|            type="datetime-local"
+    66|            id="clue-found-at"
+    67|            name="foundAt"
+    68|            required
+    69|          />
+    70|        </div>
+    71|
+    72|        <div class="form-field">
+    73|          <label>上传现场照片 <span class="optional">（选填）</span></label>
+    74|          <div class="clue-photos">
+    75|            <div id="clue-photo-list" class="clue-photo-list" aria-live="polite"></div>
+    76|            <button type="button" id="clue-photo-add" class="clue-photo-add" aria-label="添加照片">
+    77|              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    78|                <path d="M12 5v14M5 12h14"/>
+    79|              </svg>
+    80|              <span>添加照片</span>
+    81|            </button>
+    82|          </div>
+    83|          <input type="file" id="clue-photos" accept="image/jpeg,image/png" multiple hidden />
+    84|          <p class="form-hint">可上传现场照片，帮助核实线索真实性，最多 5 张</p>
+    85|        </div>
+    86|
+    87|        <div class="form-field">
+    88|          <label for="clue-contact">联系方式 <span class="optional">（选填）</span></label>
+    89|          <input
+    90|            type="text"
+    91|            id="clue-contact"
+    92|            name="contact"
+    93|            placeholder="请填写您的联系方式"
+    94|            autocomplete="tel"
+    95|          />
+    96|          <p class="form-hint">选填，便于我们在核实线索时与您联系</p>
+    97|        </div>
+    98|
+    99|        <button type="submit" id="clue-submit" class="btn-primary">提交线索</button>
+   100|      </form>
+   101|
+   102|      <div id="clue-success" class="clue-success hidden" role="status">
+   103|        <p class="clue-success__title">提交成功</p>
+   104|        <p class="clue-success__text">感谢您的热心帮助，我们会认真核实您提供的线索。</p>
+   105|        <button type="button" id="clue-reset" class="btn-secondary">继续上报</button>
+   106|      </div>
+   107|
+   108|      <aside class="clue-privacy" aria-label="隐私说明">
+   109|        <h2>隐私保护</h2>
+   110|        <p>您提供的线索仅用于寻亲比对与核实，我们承诺严格保密，不会向无关方披露您的个人信息。</p>
+   111|      </aside>
+   112|    </section>
+   113|  </main>
+   114|
+   115|  <footer class="site-footer">
+   116|    <p class="footer-official">
+   117|      官方合作平台：
+   118|      <a href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">宝贝回家寻子网</a>
+   119|    </p>
+   120|    <p class="footer-copy">© 2026 寻亲 AI · 仅供公益寻亲使用</p>
+   121|  </footer>
+   122|
+   123|  <div id="error-modal" class="overlay">
+   124|    <div class="overlay-card modal-card">
+   125|      <h3>提示</h3>
+   126|      <p id="error-message"></p>
+   127|      <button id="error-close" type="button" class="btn-primary">知道了</button>
+   128|    </div>
+   129|  </div>
+   130|
+   131|  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+   132|  <script src="js/clue.js"></script>
+   133|</body>
+   134|</html>
+   135|

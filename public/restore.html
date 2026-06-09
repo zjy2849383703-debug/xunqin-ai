@@ -1,0 +1,89 @@
+     1|<!DOCTYPE html>
+     2|<html lang="zh-CN">
+     3|<head>
+     4|  <meta charset="UTF-8" />
+     5|  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     6|  <title>老照片修复 · 寻亲 AI</title>
+     7|  <link rel="stylesheet" href="css/styles.css" />
+     8|</head>
+     9|<body>
+    10|
+    11|  <header class="site-header">
+    12|    <nav class="site-nav">
+    13|      <a href="index.html" class="site-logo">
+    14|        <img
+    15|          class="brand-logo brand-logo--nav"
+    16|          src="images/logo.png"
+    17|          alt="AI让爱回家"
+    18|          width="357"
+    19|          height="133"
+    20|        />
+    21|      </a>
+    22|      <ul class="nav-links">
+    23|        <li><a href="index.html">首页</a></li>
+    24|        <li><a href="restore.html">老照片修复</a></li>
+    25|        <li><a href="grow.html">成长预测</a></li>
+    26|        <li><a href="clue.html">线索上报</a></li>
+    27|      </ul>
+    28|    </nav>
+    29|  </header>
+    30|
+    31|  <main class="site-main">
+    32|    <section class="page-hero">
+    33|      <h1>老照片修复</h1>
+    34|      <p>修复模糊、破损、褪色的珍贵老照片，还原清晰面容与真实色彩</p>
+    35|    </section>
+    36|
+    37|    <section class="feature-panel">
+    38|      <div class="upload-card">
+    39|        <div id="restore-upload-zone" class="upload-zone">
+    40|          <input type="file" id="restore-file" accept="image/jpeg,image/png" hidden />
+    41|          <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+    42|            <path d="M12 16V4m0 0L8 8m4-4l4 4M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/>
+    43|          </svg>
+    44|          <p class="upload-title">点击或拖拽上传老照片</p>
+    45|          <p class="upload-hint">支持 JPG / PNG，最大 10MB</p>
+    46|          <img id="restore-preview" class="upload-preview hidden" alt="预览" />
+    47|        </div>
+    48|
+    49|        <button id="restore-submit" type="button" class="btn-primary">开始修复</button>
+    50|
+    51|        <div id="restore-result" class="result-section hidden">
+    52|          <p class="result-label">修复结果</p>
+    53|          <img id="restore-result-img" class="result-img" alt="修复结果" />
+    54|          <button type="button" id="restore-download" class="btn-secondary">下载高清图</button>
+    55|        </div>
+    56|      </div>
+    57|    </section>
+    58|  </main>
+    59|
+    60|  <footer class="site-footer">
+    61|    <p class="footer-official">
+    62|      官方合作平台：
+    63|      <a href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">宝贝回家寻子网</a>
+    64|    </p>
+    65|    <p class="footer-copy">© 2026 寻亲 AI · 仅供公益寻亲使用</p>
+    66|  </footer>
+    67|
+    68|  <div id="loading-overlay" class="overlay">
+    69|    <div class="overlay-card">
+    70|      <div class="loader"></div>
+    71|      <h3>AI 修复中</h3>
+    72|      <p>图像处理约需 15–30 秒，请耐心等待</p>
+    73|    </div>
+    74|  </div>
+    75|
+    76|  <div id="error-modal" class="overlay">
+    77|    <div class="overlay-card modal-card">
+    78|      <h3>提示</h3>
+    79|      <p id="error-message"></p>
+    80|      <button id="error-close" type="button" class="btn-primary">知道了</button>
+    81|    </div>
+    82|  </div>
+    83|
+    84|  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+    85|  <script src="js/restore.js"></script>
+    86|</body>
+    87|</html>
+    88|

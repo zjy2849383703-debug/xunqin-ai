@@ -1,0 +1,118 @@
+     1|<!DOCTYPE html>
+     2|<html lang="zh-CN">
+     3|<head>
+     4|  <meta charset="UTF-8" />
+     5|  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     6|  <title>成长预测 · 寻亲 AI</title>
+     7|  <link rel="stylesheet" href="css/styles.css" />
+     8|</head>
+     9|<body>
+    10|
+    11|  <header class="site-header">
+    12|    <nav class="site-nav">
+    13|      <a href="index.html" class="site-logo">
+    14|        <img
+    15|          class="brand-logo brand-logo--nav"
+    16|          src="images/logo.png"
+    17|          alt="AI让爱回家"
+    18|          width="357"
+    19|          height="133"
+    20|        />
+    21|      </a>
+    22|      <ul class="nav-links">
+    23|        <li><a href="index.html">首页</a></li>
+    24|        <li><a href="restore.html">老照片修复</a></li>
+    25|        <li><a href="grow.html">成长预测</a></li>
+    26|        <li><a href="clue.html">线索上报</a></li>
+    27|      </ul>
+    28|    </nav>
+    29|  </header>
+    30|
+    31|  <main class="site-main">
+    32|    <section class="page-hero">
+    33|      <h1>儿童成长预测</h1>
+    34|      <p>上传儿童正面照，填写性别与年龄信息，AI 生成更贴近真实的成长预测照</p>
+    35|    </section>
+    36|
+    37|    <section class="feature-panel">
+    38|      <div class="upload-card">
+    39|        <div id="grow-upload-zone" class="upload-zone">
+    40|          <input type="file" id="grow-file" accept="image/jpeg,image/png" hidden />
+    41|          <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+    42|            <path d="M12 16V4m0 0L8 8m4-4l4 4M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/>
+    43|          </svg>
+    44|          <p class="upload-title">点击或拖拽上传儿童照片</p>
+    45|          <p class="upload-hint">支持 JPG / PNG，最大 10MB</p>
+    46|          <img id="grow-preview" class="upload-preview hidden" alt="预览" />
+    47|        </div>
+    48|
+    49|        <div class="form-row form-row--gender">
+    50|          <span class="form-row__label">性别</span>
+    51|          <div class="gender-options" role="radiogroup" aria-label="性别">
+    52|            <label class="gender-option">
+    53|              <input type="radio" name="grow-gender" value="男" checked />
+    54|              <span>男</span>
+    55|            </label>
+    56|            <label class="gender-option">
+    57|              <input type="radio" name="grow-gender" value="女" />
+    58|              <span>女</span>
+    59|            </label>
+    60|          </div>
+    61|        </div>
+    62|        <p class="form-hint">用于生成更符合性别的面部与体态特征</p>
+    63|
+    64|        <div class="form-row">
+    65|          <label for="photo-age">照片年龄</label>
+    66|          <input type="number" id="photo-age" min="1" max="18" placeholder="如 5" required />
+    67|          <span class="unit">岁</span>
+    68|        </div>
+    69|        <p class="form-hint">拍摄或走失时照片中孩子的大致年龄（1–18 岁）</p>
+    70|
+    71|        <div class="form-row">
+    72|          <label for="target-age">目标年龄</label>
+    73|          <input type="number" id="target-age" min="2" max="120" placeholder="如 30" required />
+    74|          <span class="unit">岁</span>
+    75|        </div>
+    76|        <p class="form-hint">希望预测到的成年或当前年龄，须大于照片年龄</p>
+    77|
+    78|        <button id="grow-submit" type="button" class="btn-primary">生成成年照</button>
+    79|
+    80|        <div id="grow-result" class="result-section hidden">
+    81|          <p class="result-label">预测结果</p>
+    82|          <img id="grow-result-img" class="result-img" alt="生成结果" />
+    83|          <button type="button" id="grow-download" class="btn-secondary">下载图片</button>
+    84|        </div>
+    85|      </div>
+    86|    </section>
+    87|  </main>
+    88|
+    89|  <footer class="site-footer">
+    90|    <p class="footer-official">
+    91|      官方合作平台：
+    92|      <a href="https://www.baobeihuijia.com/" target="_blank" rel="noopener noreferrer">宝贝回家寻子网</a>
+    93|    </p>
+    94|    <p class="footer-copy">© 2026 寻亲 AI · 仅供公益寻亲使用</p>
+    95|  </footer>
+    96|
+    97|  <div id="loading-overlay" class="overlay">
+    98|    <div class="overlay-card">
+    99|      <div class="loader"></div>
+   100|      <h3>AI 生成中</h3>
+   101|      <p>图像生成约需 15–30 秒，请耐心等待</p>
+   102|    </div>
+   103|  </div>
+   104|
+   105|  <div id="error-modal" class="overlay">
+   106|    <div class="overlay-card modal-card">
+   107|      <h3>提示</h3>
+   108|      <p id="error-message"></p>
+   109|      <button id="error-close" type="button" class="btn-primary">知道了</button>
+   110|    </div>
+   111|  </div>
+   112|
+   113|  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+   114|  <script src="js/grow.js"></script>
+   115|</body>
+   116|</html>
+   117|
